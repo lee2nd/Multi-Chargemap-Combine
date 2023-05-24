@@ -85,6 +85,10 @@ step_lst = ["Step1_Step2",
 # 生成一個 2x4 的 subplot，figsize 可以調整整個圖的大小
 fig, axs = plt.subplots(4, 2)
 
+# 建立一個空的 2d array
+w, h = 480, 270
+empty_arr = [[0 for x in range(w)] for y in range(h)]    
+
 for step in step_lst:
     
     for color in color_lst:
@@ -113,6 +117,7 @@ for step in step_lst:
                 
             except:
                 ax.set_title(chip)
+                ax.imshow(empty_arr, cmap="Greys")
                 ax.set_xticks([])
                 ax.set_yticks([])          
                 continue   
